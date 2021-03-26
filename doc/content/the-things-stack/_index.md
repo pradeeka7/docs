@@ -27,15 +27,15 @@ The Things Stack V3 <a href="https://www.thethingsindustries.com/docs/reference/
 
 ## How can I access V3?
 
-The (free) community edition of The Things Stack V3 can be accessed via the <a href="https://console.cloud.thethings.network/" target="_blank">**Console**</a>. Make sure to select the cluster which is closest to you geographically.
+The Things Network, which is a (free) community edition of The Things Stack V3, can be accessed via Console. You can access it by <a href="https://console.cloud.thethings.network/" target="blank_">selecting a cluster</a> which is closest to you geographically.
 
-[![The Things Network Console](TTN-V3-console.png "The Things Network Console")](https://console.cloud.thethings.network/)
+![The Things Network Console](TTN-V3-console.png "The Things Network Console")
 
 ## Why should I migrate from V2 to V3?
 
 > Here, we assume you have experience using The Things Network running The Things Network Stack V2. If you have not been using The Things Network yet, you can visit the [The Things Stack Quick Start]({{< ref "quick-start" >}}).
 
-The Things Stack (V3) is more scalable, more secure and supports all the latest LoRaWAN developments like the latest LoRaWAN versions 1.1 and 1.0.4. Near the end of 2021, The Things Network V2 clusters will be shut down. 
+The Things Stack V3 is more scalable, more secure and supports all the latest LoRaWAN developments like the latest LoRaWAN versions 1.1 and 1.0.4. Near the end of 2021, The Things Network V2 clusters will be shut down. 
 
 The Things Stack Architecture is based on microservices which allows for better distribution of services, better scaling and interoperability with other LoRaWAN networks. 
 

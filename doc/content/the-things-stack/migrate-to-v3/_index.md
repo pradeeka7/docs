@@ -18,7 +18,7 @@ Let's assume that your gateway and device are still connected to The Things Netw
 
 ## V3 login
 
-To be able to continue following steps below, you first need to log in to <a href="https://console.cloud.thethings.network/" target="_blank">The Things Stack development console</a>. You can do so by using your credentials after registering, or via The Things ID feature and use your known username and password.
+To be able to continue following steps below, you first need to log in to <a href="https://console.cloud.thethings.network/" target="_blank">The Things Stack Console</a>. You can do so by logging in with your The Things Network credentials via The Things ID.
 
 ## Add an application in V3
 
@@ -77,7 +77,7 @@ If you have a **really good reason** to use ABP, you can add an ABP device to V3
 
 When you have registered your device in your V3 instance, you should prevent your device from joining the V2 network. 
 
-For OTAA device, you can simply do it by deleting your device from V2, however, this is **not recommended** - you might loose some data. The recommended practice is to change the `AppKey` in V2. This way, your existing session would not be terminated yet, but new Join requests sent by your end device would not be accepted by the V2 cluster. 
+For OTAA device, you can simply do it by deleting your device from V2, however, this is **not recommended** - you might lose some data. The recommended practice is to change the `AppKey` in V2. This way, your existing session would not be terminated yet, but new Join requests sent by your end device would not be accepted by the V2 cluster. 
 
 > If the migration process does not go as expected, you can return the old value of your `AppKey` and reconnect it to V2.
 
@@ -108,17 +108,13 @@ To complete the migration this way, you need to have  <a href="https://github.co
 
 `ttn-lw-migrate` is used to export end devices and applications from The Things Network Stack V2 cluster to a <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/device-json/" target="_blank">JSON file</a>. This JSON file can later be <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/import-devices/" target="_blank">imported</a> in The Things Stack V3 via Console or via CLI.
 
-### Note about migrating an active session
+### Note about migrating active sessions
 
-If your The Things Stack instance version is `3.10` or higher, you may transfer the active device session as well. This means:
+Starting from The Things Stack version `v3.12.0`, for certain deployments it is possible to migrate active sessions as well. Migrating an active session means that OTAA devices will not have to perform a rejoin on the V3 network, and both OTAA and ABP devices will not have to be deleted from the V2 cluster in order to work properly when migrated to the V3 cluster. 
 
-- Your device will continue working on The Things Stack V3 cluster. 
-- Your OTAA device will not have to perform a new join on V3 network and you will not have to delete this device manually from V2 cluster. 
-- You will not have to delete your ABP device manually from V2 cluster.
+{{< warning >}} Migrating active sessions is **not available for The Things Network**. 
 
-When migrating an active session, after exporting an end device from V2 cluster by using the migration tool, session and root keys will be cleared from The Things Network Stack V2 cluster by default. This means this device will no longer work in the V2 cluster. 
-
-You can disable this behavior by using the `--ttnv2.with-session=false` flag when running `ttn-lw-migrate`. In that case, you have to prevent your end device from rejoining the V2 network - for OTAA device this means changing the `AppKey` in V2 and performing a new join on V3 network, and for ABP device this means deleting it from the V2 cluster completely.
+The reason for this is that after upgrading to The Things Stack V3, The Things Network started using a different `DevAddr` block than the one used on The Things Network clusters running The Things Network Stack V2. {{</ warning >}}
 
 ### Configure the environment
 
@@ -201,9 +197,9 @@ $ ttn-lw-cli end-devices create --application-id "v3-application-id" < devices.j
 
 ### Adjust MAC settings for imported devices in V3
 
-If you have migrated an OTAA end device without preserving the existing session, i.e. your device performed a new join to the The Things Stack V3, the MAC settings will be automatically configured correctly by the Network Server. 
+If you have migrated an OTAA end device and your device performed a new join to the The Things Stack V3, the MAC settings will be automatically configured correctly by the Network Server. 
 
-Hovewer, if you have migrated an ABP device, or if you have migrated an OTAA device with preserving the existing session (i.e. your device did not perform a new join), you might want to configure the MAC settings manually. 
+Hovewer, if you have migrated an ABP device, you will have to configure the MAC settings manually. 
 
 This is needed because some recommended settings used by the V2 and V3 Network Server are different. For example, `RxDelay` parameter used by the V2 is 1 second by default, while the recommended value for the V3 is 5 seconds. The V3 Network Server will try to automatically change this for you, but it might take some time until the MAC command reaches the end device. 
 
