@@ -112,9 +112,11 @@ To complete the migration this way, you need to have  <a href="https://github.co
 
 Starting from The Things Stack version `v3.12.0`, for certain deployments it is possible to migrate active sessions as well. Migrating an active session means that OTAA devices will not have to perform a rejoin on the V3 network, and both OTAA and ABP devices will not have to be deleted from the V2 cluster in order to work properly when migrated to the V3 cluster. 
 
-{{< warning >}} Migrating active sessions is **not available for The Things Network**. 
+{{< warning >}} Migrating active sessions is **not available for The Things Network**. This means that if you are using The Things Network, your device will have to perform a new join to the V3 network.
 
-The reason for this is that after upgrading to The Things Stack V3, The Things Network started using a different `DevAddr` block than the one used on The Things Network clusters running The Things Network Stack V2. {{</ warning >}}
+The reason for this is that after upgrading to The Things Stack V3, The Things Network started using a different `DevAddr` block than the one used on The Things Network clusters running The Things Network Stack V2.
+
+Migrating active sessions is available only for V2 SaaS customers migrating to The Things Stack Cloud and other paid V3 offerings. {{</ warning >}}
 
 ### Configure the environment
 
