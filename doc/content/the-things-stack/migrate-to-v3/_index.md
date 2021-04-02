@@ -18,7 +18,7 @@ Let us assume that your gateway and device are still connected to The Things Net
 
 ## Log in to The Things Stack Community Edition
 
-To be able to continue following steps below, you first need to log in to The Things Stack Community Edition by <a href="https://console.cloud.thethings.network/" target="_blank">selecting a cluster that is closest to you geographically</a>. You can do so by logging in with your The Things Network credentials via The Things ID.
+To be able to continue following steps below, you first need to log in to The Things Stack Community Edition Console by first <a href="https://console.cloud.thethings.network/" target="_blank">selecting a cluster that is closest to you geographically</a>. You can then log in with your The Things Network credentials via The Things ID.
 
 ## Add an application in The Things Stack Community Edition
 
@@ -116,7 +116,7 @@ Starting from The Things Stack version `v3.12.0`, for certain deployments it is 
 
 {{< warning >}} Unfortunately, migrating active sessions is **not available for The Things Network V2 and The Things Stack Community Edition**. This means that, if you are using these deployments, your device will have to perform a new join on The Things Stack Community Edition network.
 
-The reason for this is that The Things Stack Community Edition is using a different `DevAddr` block than the one The Things Network V2 is using.
+The reason for this is that The Things Stack Community Edition is using a different `DevAddr` block compared to The Things Network V2.
 
 Migrating active sessions is available only for The Things Industries V2 (V2 SaaS) customers migrating to The Things Stack Cloud and other paid offerings of The Things Stack. {{</ warning >}}
 

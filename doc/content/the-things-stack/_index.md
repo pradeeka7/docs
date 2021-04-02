@@ -32,7 +32,7 @@ The free, community-operated LoRaWAN network, formerly known as The Things Netwo
 
 ## How can I start using The Things Stack Community Edition?
 
-The Things Stack Community Edition, which is a free edition of The Things Stack, can be accessed via Console. You can access the Console by <a href="https://console.cloud.thethings.network/" target="blank_">selecting a cluster</a> that is closest to you geographically.
+The Things Stack Community Edition, which is a free edition of The Things Stack, can be accessed via the Console. You can access the Console by <a href="https://console.cloud.thethings.network/" target="blank_">selecting a cluster</a> that is closest to you geographically.
 
 ![The Things Stack Community Edition Console](TTN-V3-console.png "The Things Network Console")
 
@@ -42,7 +42,7 @@ The Things Stack Community Edition, which is a free edition of The Things Stack,
 
 > All the information in this section refers to The Things Stack Community Edition, but also The Things Stack in general. For the purpose of simplicity of this section, we use the term *The Things Stack*.
 
-The Things Stack is more scalable, more secure and supports all the latest LoRaWAN developments like the latest LoRaWAN versions 1.1 and 1.0.4. Also, near the end of 2021, The Things Network V2 clusters will be shut down. 
+The Things Stack, compared to The Things Network V2, is more scalable, more secure and supports all the latest LoRaWAN developments like the latest LoRaWAN versions 1.1 and 1.0.4. Also, near the end of 2021, The Things Network V2 clusters will be shut down. 
 
 The Things Stack architecture is based on microservices which allows for better distribution of services, better scaling and interoperability with other LoRaWAN networks. 
 
